@@ -8,7 +8,7 @@ type keyProps = {
 const Key = ({ label, action, className, ...props }: keyProps) => {
   return (
     <button
-      className={"p-5 text-3xl rounded-lg text-dark-primary-200 bg-dark-secondary-300 border-b-[5px] border-neutral-400 " + className}
+      className={"p-5 flex-center text-3xl rounded-lg text-dark-primary-200 bg-dark-secondary-300 border-b-[5px] border-neutral-400 " + className}
       onClick={action}
       {...props}
     >

@@ -121,7 +121,7 @@ const CalculatorContainer = () => {
   };
   return (
     <div className="flex flex-col items-center mt-[2rem]">
-      <div className="min-w-[30rem]">
+      <div className="md:min-w-[40rem] p-4">
         <CalculatorHeader />
         <Display display={calculatorState} />
         <KeyPads onClick={handleClick} />
