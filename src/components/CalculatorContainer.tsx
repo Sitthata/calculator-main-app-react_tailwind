@@ -17,6 +17,7 @@ const CalculatorContainer = () => {
   };
   const [calculatorState, setCalculatorState] =
     useState<CalculatorState>(initialState);
+  const [isCalculated, setIsCalculated] = useState<boolean>(false);
   // TODO:
   const handleNumber = (value: string) => {
     if (calculatorState.currentValue === "0") {
@@ -75,10 +76,22 @@ const CalculatorContainer = () => {
         previousValue: "",
         operator: null,
       });
+      setIsCalculated(true);
     }
   };
 
   const handleClick = (value: string) => {
+    if (isCalculated) {
+      if (!isNaN(parseInt(value))) {
+        setCalculatorState({ ...initialState, currentValue: value });
+        setIsCalculated(false);
+        return;
+      } else if (value !== "=") {
+        setCalculatorState({ ...initialState, currentValue: "0" });
+        setIsCalculated(false);
+      }
+    }
+
     if (!isNaN(parseInt(value))) {
       handleNumber(value);
     } else {
@@ -107,7 +120,7 @@ const CalculatorContainer = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center mt-[2rem] outline outline-1">
+    <div className="flex flex-col items-center mt-[2rem]">
       <div className="min-w-[30rem]">
         <CalculatorHeader />
         <Display display={calculatorState} />
