@@ -31,7 +31,7 @@ const KeyPads = ({ onClick }: KeyPadProps) => {
       <Key
         label="Reset"
         action={() => onClick("C")}
-        className="col-span-2 bg-dark-primary-100 !text-neutral-100 !border-dark-primary-200"
+        className="col-span-2 !border-dark-primary-200 !text-neutral-100 !bg-dark-primary-100"
       />
       <Key
         label="="
