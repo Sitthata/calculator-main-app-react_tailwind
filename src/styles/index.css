@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Mooli&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-dark-main-bg-100
+}
+
+.flex-center {
+    @apply flex justify-center items-center
+}
+
+.flex-center-column {
+    @apply flex flex-col justify-center items-center
+}
+
+.flex-start {
+    @apply flex justify-start items-start
+}
+
+.flex-end {
+    @apply flex justify-end items-end
+}
